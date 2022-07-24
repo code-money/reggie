@@ -95,6 +95,13 @@ public class UserController {
     }
 
 
+    @PostMapping("/loginout")
+    public R<String> logout(HttpSession session){
+        log.info("用户登出");
+        session.removeAttribute("user");
+        return R.success("用户退出");
+    }
+
 
 }
 

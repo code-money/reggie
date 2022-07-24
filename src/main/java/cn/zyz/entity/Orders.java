@@ -1,9 +1,11 @@
 package cn.zyz.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import lombok.Data;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * 订单
@@ -58,4 +60,8 @@ public class Orders implements Serializable {
 
     //收货人
     private String consignee;
+
+    //订单包含的详细订单详细信息
+    @TableField(exist = false)
+    private List<OrderDetail> orderDetails;
 }
