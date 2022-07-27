@@ -7,7 +7,7 @@ package cn.zyz.common;
  **/
 
 /**
- * 基于ThreadLocal封装工具类，用户保存和获取当前用户id
+ * 基于ThreadLocal封装工具类，用户保存和获取当前登陆的后台或前台用户ID
  */
 public class BaseContext {
     private static ThreadLocal<Long> threadLocal = new ThreadLocal<>();

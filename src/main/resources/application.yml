@@ -10,15 +10,22 @@ spring:
       url: jdbc:mysql://localhost:3306/reggie?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
       username: root
       password: root
+  redis:
+    host: 101.42.225.134
+    port: 9736
+    database: 0
+  cache:
+    redis:
+      time-to-live: 3600000  #设置缓存过期时间
 
 mybatis-plus:
   configuration:
     #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，按照驼峰命名法映射
     map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  #在控制台输出MyBatis-Plus相关日志
   global-config:
     db-config:
       id-type: ASSIGN_ID  #雪花算法自动生成ID
     banner: off
 reggie:
-  path: F:\\reggieupload\
+  path: F:\\reggieupload\    #上传下载图片目录
