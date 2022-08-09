@@ -29,7 +29,7 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
         this.strictUpdateFill(metaObject,"updateTime", LocalDateTime.class,LocalDateTime.now());
         /*
             从ThreadLocal中获取放入的当前登陆的用户id
-            为什么用ThreadLocal不用Session？
+            为什么用ThreadLocal不用Session呢？
             因为请求的作用域是有范围的，在当前MP自动填充类中无法获取session
             所以用ThreadLocal扩展了当前请求的作用域，并将登陆的用户Id放到ThreadLocal中
          */
