@@ -15,7 +15,7 @@ spring:
     port: 9736
     database: 0
   cache:
-    redis:
+    redis:   #设置Redis作为当前缓存
       time-to-live: 3600000  #设置缓存过期时间
 
 mybatis-plus:
